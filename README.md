@@ -13,12 +13,21 @@ sudo apt-get install openssh-client
 ```
 You will also need ansible to be installed and you can find the instructions at: http://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#id14
 This repository was developed with ansible version 2.5.0 installed on the control machine.
-You will need the username with sudo privileges on the target server.
+You will need a username with sudo privileges on the target server.
 
 ## Information you need to provide
-You will need to add your server IP to the XXX file.
+You will need to add your server IP(s) to a 'hosts' file.
+**Example hosts file**
+```
+[webservers]
+127.0.0.1
+
+[dbservers]
+127.0.0.1
+```
+You can copy hosts.example to hosts and then edit it as required.
 
 ## Example
 ```
-ansible-playbook servers.yml -i production
+ansible-playbook amp.yml -i hosts --check --ask-pass --ask-become-pass
 ```

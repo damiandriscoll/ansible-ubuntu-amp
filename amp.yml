@@ -1,0 +1,13 @@
+---
+- hosts: dbservers
+  become: yes
+  gather_facts: yes
+  roles:
+    - mysql
+
+- hosts: webservers
+  become: yes
+  gather_facts: yes
+  roles:
+    - apache
+    - php
