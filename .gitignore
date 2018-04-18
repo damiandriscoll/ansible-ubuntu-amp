@@ -1,0 +1,8 @@
+# hosts file is user specific so don't commit it
+hosts
+# ditto ansible.cfg
+ansible.cfg
+
+# Vim swap files
+.*.sw*
+
