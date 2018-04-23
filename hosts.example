@@ -1,0 +1,5 @@
+[webservers]
+<your webserver ip>
+
+[dbservers]
+<your dbserver ip>
