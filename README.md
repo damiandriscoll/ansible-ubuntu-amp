@@ -2,7 +2,6 @@
 install apache, mysql and php on a remote server using ansible
 
 ## Preamble
-I often find myself having to setup a LAMP server and whilst this is fairly straightforward it seemed a good idea to automate the process to save time for the next time around.
 This repository was developed on a linux desktop running Ubuntu 16.04 so if you are running on something else then the installation details will almost certainly be different.
 The target server was also running ubuntu 16.04 and so for the moment this repo will only be tested against this flavour of server.
 
@@ -27,7 +26,16 @@ You will need to add your server IP(s) to a 'hosts' file.
 ```
 You can copy hosts.example to hosts and then edit it as required.
 
+You will also need the name of user on the remote machine that has sudo acess. This information is stored in the **ansible.cfg** file.
+**Example ansible.cfg file**
+```
+[defaults]
+remote_user=some-user-name
+```
+You can copy ansible.cfg.example to ansible.cfg and then edit it as required.
+
 ## Example
 ```
 ansible-playbook amp.yml -i hosts --check --ask-pass --ask-become-pass
 ```
+If you set up passwordless logins using ssh keys then you should omit the **--ask-pass** and **--ask-become-pass** arguments above.
