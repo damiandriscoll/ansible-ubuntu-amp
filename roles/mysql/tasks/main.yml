@@ -9,3 +9,32 @@
       - mysql-client
       - python-mysqldb
       - libmysqlclient-dev
+
+- name: Install Python package manager
+  apt: name=python-pip state=present
+
+- name: Install the Python MySQLB module
+  pip: name=MySQL-python state=present
+
+- name: Set MySQL root password
+  mysql_user:
+      name: root
+      host: "{{ item }}"
+      password: "{{ mysql_root_password }}"
+      state: present
+      update_password: always
+  with_items:
+      - "{{ ansible_hostname }}"
+
+- name: Copy over the mysql templates
+  template:
+      src: "{{ item.src }}"
+      dest: "{{ item.dest }}"
+      owner: root
+      group: root
+      mode: "{{ item.mode | default(644) }}"
+  with_items:
+      - { src: 'my.cnf.j2', dest: '/etc/mysql/my.cnf' }
+      - { src: 'root.cnf.j2', dest: '~/.my.cnf', mode: '600' }
+  notify:
+      - restart mysql

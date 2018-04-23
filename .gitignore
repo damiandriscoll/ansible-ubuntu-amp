@@ -2,6 +2,8 @@
 hosts
 # ditto ansible.cfg
 ansible.cfg
+# ditto group_vars/all
+group_vars/all
 
 # Vim swap files
 .*.sw*
