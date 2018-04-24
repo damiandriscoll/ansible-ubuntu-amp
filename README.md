@@ -16,6 +16,7 @@ You will need a username with sudo privileges on the target server.
 
 ## Information you need to provide
 You will need to add your server IP(s) to a 'hosts' file.
+
 **Example hosts file**
 ```
 [webservers]
@@ -27,6 +28,7 @@ You will need to add your server IP(s) to a 'hosts' file.
 You can copy hosts.example to hosts and then edit it as required.
 
 You will also need the name of user on the remote machine that has sudo acess. This information is stored in the **ansible.cfg** file.
+
 **Example ansible.cfg file**
 ```
 [defaults]
@@ -34,7 +36,7 @@ remote_user=some-user-name
 ```
 You can copy ansible.cfg.example to ansible.cfg and then edit it as required.
 
-## Example
+## Usage example
 ```
 ansible-playbook amp.yml -i hosts --check --ask-pass --ask-become-pass
 ```
