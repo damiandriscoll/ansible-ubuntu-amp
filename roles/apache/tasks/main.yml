@@ -1,3 +1,9 @@
 ---
 - name: Install apache
-  apt: name=apache2 update_cache=yes state=latest
+  apt: name={{ item }} update_cache=yes state=latest
+  with_items:
+      - apache2
+      - libapache2-mod-php
+
+- name: Enable mod rewrite
+  action: command a2enmod rewrite
