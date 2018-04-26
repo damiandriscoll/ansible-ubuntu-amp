@@ -36,6 +36,16 @@ remote_user=some-user-name
 ```
 You can copy ansible.cfg.example to ansible.cfg and then edit it as required.
 
+## Customisation
+
+You may wish to install and / or enable more apache modules than just mom-php and mod-rewrite, and if so you
+should edit **roles/apache/tasks/main.yml** as required.
+
+You may wish to install more (or less) PHP libraries than the list provided by default, and if so you
+should edit **roles/php/tasks/main.yml** as required.
+
+If your MySQL configuration is different to the default installation then edit **roles/templates/my.cnf.j2** as required.
+
 ## Usage example
 ```
 ansible-playbook amp.yml -i hosts --check --ask-pass --ask-become-pass
