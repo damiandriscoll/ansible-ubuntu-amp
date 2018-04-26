@@ -38,7 +38,7 @@ You can copy ansible.cfg.example to ansible.cfg and then edit it as required.
 
 ## Customisation
 
-You may wish to install and / or enable more apache modules than just mom-php and mod-rewrite, and if so you
+You may wish to install and / or enable more apache modules than just mod-php and mod-rewrite, and if so you
 should edit **roles/apache/tasks/main.yml** as required.
 
 You may wish to install more (or less) PHP libraries than the list provided by default, and if so you
