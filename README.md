@@ -36,6 +36,15 @@ remote_user=some-user-name
 ```
 You can copy ansible.cfg.example to ansible.cfg and then edit it as required.
 
+You will also need to provide the root password for MySQL in the group_vars/all.
+
+**Example group\_vars/all file**
+```
+---
+mysql_root_password: MyMySQLPassword
+```
+You can copy group\_vars/all.example to group_vars/all and edit it as required.
+
 ## Customisation
 
 You may wish to install and / or enable more apache modules than just mod-php and mod-rewrite, and if so you
