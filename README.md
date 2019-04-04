@@ -27,7 +27,7 @@ You will need to add your server IP(s) to a 'hosts' file.
 ```
 You can copy hosts.example to hosts and then edit it as required.
 
-You will also need the name of user on the remote machine that has sudo acess. This information is stored in the **ansible.cfg** file.
+You will also need the name of user on the remote machine that has sudo access. This information is stored in the **ansible.cfg** file.
 
 **Example ansible.cfg file**
 ```
